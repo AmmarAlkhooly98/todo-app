@@ -1,32 +1,29 @@
 {
-  "name": "todo-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "nodemon": "^1.19.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "nodemon back-end/server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "todo-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"axios": "^0.19.0",
+		"firebase": "^6.3.4",
+		"nodemon": "^1.19.1",
+		"react": "^16.8.6",
+		"react-alert": "^5.5.0",
+		"react-dom": "^16.8.6",
+		"react-scripts": "3.0.1",
+		"redux": "^4.0.4"
+	},
+	"scripts": {
+		"start": "nodemon back-end/server.js",
+		"build": "react-scripts build",
+		"fe": "react-scripts start",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+	}
 }
