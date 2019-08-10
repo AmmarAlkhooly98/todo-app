@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
+const { todo, user } = require('./database/models');
+
 app.use(
 	bodyParser.urlencoded({
-		extended: true
+		extended: false
 	})
 );
 app.use(express.static(__dirname + '/../build'));
