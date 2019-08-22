@@ -10,7 +10,7 @@ const user = db.define('user', {
 
 const todo = db.define('todo', {
 	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-	todo: { type: Sequelize.STRING, required: true }
+	todos: { type: Sequelize.STRING, required: true }
 });
 
 todo.belongsTo(user);
