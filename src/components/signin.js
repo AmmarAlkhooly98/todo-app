@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { userSignIn } from '../actions/signinAction';
 import { BrowserRouter as Router, Route, Switch, NavLink, Redirect, withRouter } from 'react-router-dom';
 
@@ -27,9 +28,9 @@ class SignIn extends Component {
 		this.props.userSignIn(signIn_Info);
 	}
 
-	componentWillReceiveProps(props) {
-		console.log(props);
-		if (props.token) {
+	componentWillReceiveProps(next) {
+		console.log(next);
+		if (next.token) {
 			this.props.history.push('/userProfile');
 		}
 	}
@@ -59,6 +60,10 @@ class SignIn extends Component {
 		);
 	}
 }
+
+SignIn.propTypes = {
+	userSignIn: PropTypes.func.isRequired
+};
 
 const mapStateToProps = (state) => ({
 	username: state.userSignIn.username,
