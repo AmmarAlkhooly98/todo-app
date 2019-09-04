@@ -24,4 +24,8 @@ li a:hover {
 
 .bg {
 	background-image: url("./imgs/beautiful-color-ui-gradients-backgrounds-endless-river.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	align-content: center;
+	text-align: center;
 }

@@ -19,10 +19,10 @@ app.use(bodyParser.json());
 
 //sign up for users
 app.post('/signup', function(req, res) {
+	console.log(req);
 	let fullname = req.body.fullname;
 	let username = req.body.username;
 	let password = req.body.password;
-	console.log(fullname, password);
 	let hashedPassword = bcrypt.hashSync(password, 10);
 	let url = req.body.url;
 	user
@@ -49,10 +49,11 @@ app.post('/signup', function(req, res) {
 		});
 });
 
-//Sign in for engineer
+//Sign in
 app.post('/signin', function(req, res) {
-	const username = req.body.username;
-	const password = req.body.password;
+	const users = req.body;
+	const username = users.username;
+	const password = users.password;
 	//Check if user exists in the database
 	user
 		.findOne({
@@ -81,7 +82,8 @@ app.post('/signin', function(req, res) {
 						}
 					);
 					return res.send({
-						token: token
+						token: token,
+						username: users.username
 					});
 				} else {
 					return res.status(401).send({
@@ -90,6 +92,7 @@ app.post('/signin', function(req, res) {
 				}
 			});
 		});
+	console.log(res.data);
 });
 
 //add todo
