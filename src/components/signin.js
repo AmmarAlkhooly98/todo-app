@@ -28,9 +28,9 @@ class SignIn extends Component {
 		this.props.userSignIn(signIn_Info);
 	}
 
-	componentWillReceiveProps(next) {
-		console.log(next);
-		if (next.token) {
+	componentWillReceiveProps(props) {
+		console.log(props);
+		if (props.token) {
 			this.props.history.push('/userProfile');
 		}
 	}

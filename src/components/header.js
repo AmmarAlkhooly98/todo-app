@@ -25,7 +25,12 @@ class Header extends Component {
 						<NavLink to="/signup">Sign Up</NavLink>
 					</li>
 					<li>
-						<NavLink to="/signin">Sign In</NavLink>
+						{window.localStorage.length > 0 ? (
+							<NavLink to="/userProfile">profile</NavLink>
+						) : (
+							<NavLink to="/signin">Sign In</NavLink>
+						)}
+						{/* <NavLink to="/signin">Sign In</NavLink> */}
 					</li>
 				</ul>
 			</div>

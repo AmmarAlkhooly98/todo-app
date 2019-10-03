@@ -82,8 +82,9 @@ app.post('/signin', function(req, res) {
 						}
 					);
 					return res.send({
-						token: token,
-						username: users.username
+						id: user.id,
+						userName: users.username,
+						token
 					});
 				} else {
 					return res.status(401).send({
@@ -93,6 +94,27 @@ app.post('/signin', function(req, res) {
 			});
 		});
 	console.log(res.data);
+});
+
+app.get('/userProfile/user', function(req, res) {
+	const users = req.body;
+	user
+		.findOne({
+			where: {
+				username: users.username
+			}
+		})
+		.then(function(users) {
+			return res.send({
+				id: users.id,
+				fullName: users.fullName,
+				userName: users.userName,
+				url: users.url
+			});
+		})
+		.catch(function(err) {
+			return res.status(500).send(err);
+		});
 });
 
 //add todo

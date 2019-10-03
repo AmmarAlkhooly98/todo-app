@@ -8,6 +8,7 @@ export const userSignIn = (signIn_Info) => (dispatch) => {
 		.then((response) => {
 			console.log(response);
 			window.localStorage.setItem('token', response.data.token);
+			window.localStorage.setItem('userId', response.data.id);
 			window.localStorage.setItem('username', response.data.user.username);
 			dispatch({
 				type: SIGN_IN,

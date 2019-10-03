@@ -30,9 +30,6 @@ class App extends React.Component {
 						/>
 						<Route path="/signup" exact component={SignUp} />
 						<Route path="/signin" exact component={SignIn} />
-						{/* <Route path="/" exact component={Profile} /> */}
-						{/* <Profile /> */}
-						{/* <SignUp /> */}
 					</Router>
 				</Provider>
 			</div>
